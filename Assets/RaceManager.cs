@@ -52,7 +52,7 @@ public class RaceManager : MonoBehaviour
 
     IEnumerator StartCountdown()
     {
-        uiController?.UpdateLapText("READY");
+        uiController?.UpdateLapText("Внимания");
 
         for (int i = 3; i > 0; i--)
         {
@@ -60,7 +60,7 @@ public class RaceManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        uiController?.UpdateTimerTextCustom("GO!");
+        uiController?.UpdateTimerTextCustom("ВПЕРЕД!");
         isRaceStarted = true;
 
         yield return new WaitForSeconds(0.5f);
@@ -185,11 +185,11 @@ public class RaceManager : MonoBehaviour
             }
         }
 
-        uiController?.ShowEndGameScreen(aiWon ? "YOU LOSE!" : "YOU WIN!");
+        uiController?.ShowEndGameScreen(aiWon ? "ТЫ ПРОИГРАЛ!" : "Ты ВЫИГРАЛ!");
     }
 
     void UpdateUI()
     {
-        uiController?.UpdateLapText($"LAP: {playerLap} / {totalLaps}");
+        uiController?.UpdateLapText($"КРУГ: {playerLap} / {totalLaps}");
     }
 }
